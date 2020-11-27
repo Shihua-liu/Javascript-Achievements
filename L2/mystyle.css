@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(83, 75, 75);
+  }
+  
+  h1 {
+    color: black;
+    margin-left: 20px;
+  }
+
+  .rood {
+    background-color: #787F83;
+    color: #D31A1C;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .blue {
+    background-color: #787F83;
+    color: #1215C1;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .purple {
+    background-color: #787F83;
+    color: #7823BF;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .oranje {
+    background-color: #787F83;
+    color: #DF6C1B;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .green {
+    background-color: #787F83;
+    color: #29BE63;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+  }

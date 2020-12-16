@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+    <body>
+        <meter id="12cm" min="0" max="10" value="10"></meter>
+        <input type="button" id="button" value="ATTACK" ></input>
+        <h1 id="text">┬─┬ ノ( ゜-゜ノ)</h1>
+
+        <script>
+            var health = 10;
+            var damage = 1;
+            document.getElementById("button").addEventListener("click",(e)=>{
+               health -= damage;
+               document.getElementById("12cm").value= health;
+               document.getElementById("12cm").className= "groen"
+                if (health == 9) {
+                    document.getElementById("text").innerHTML= "(╯°□°）╯︵ ┻━┻"
+                }
+
+               if (health < 5) {
+                   document.getElementById("12cm").className= "oranje"
+
+               }
+               if (health < 2) {
+                document.getElementById("12cm").className= "rood" 
+               }
+
+               if (health == 0) {
+                   document.getElementById("text").innerHTML= "┬─┬ ノ( ゜-゜ノ)"
+                   document.getElementById("button").value= "reset"
+               }
+
+               if (health == -1) {
+                   health = 10;
+                   document.getElementById("text").innerHTML= "┬─┬ ノ( ゜-゜ノ)"
+                   document.getElementById("button").value= "ATTACK"
+
+               }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+.groen::-webkit-meter-optimum-value {
+    background: green;
+}
+.oranje::-webkit-meter-optimum-value {
+    background: orange;
+}
+.rood::-webkit-meter-optimum-value {
+    background: red;
+}

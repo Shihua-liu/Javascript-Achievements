@@ -8,29 +8,31 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function myfunction() {
     document.getElementById("gordijn").style.display = "none"
     document.getElementById("rick").style.display = "block"
-    money_and_time();
 }
 
 var money = 100;
+var timeleft = 100;
 
 function money_and_time(){
-    if (document.getElementById("mybtn").onclick && money != 0){
-        var spend = 5;
-        money -= spend;
-        document.getElementById("totaal").innerHTML = money
-        breakEnd = new Date();
-        breakEnd.setSeconds(breakEnd.getSeconds() + 5);
-        setInterval(() => {
-            var timer = new Date();
-            var dadate = breakEnd - timer;
-            var time = new Date(dadate).toISOString().substr(11, 8);
-            document.getElementById("timer").innerHTML = time;
-            if (dadate <= 0){
-                document.getElementById("gordijn").style.display = "block"
-                document.getElementById("rick").style.display = "none"
-                document.getElementById("timer").textContent = "00:00:00";
-            } 
-        }, 100);
-        
+    if (money != 0){
+        if (timeleft > 0){
+            timeleft -= 100
+            document.getElementById("timer").innerHTML = timeleft / 1000;
+            myfunction()
+        } else {
+            timeleft = 0
+            document.getElementById("gordijn").style.display = "block"
+            document.getElementById("rick").style.display = "none"
+            document.getElementById("timer").textContent = "00:00:00";
+        }
     };
 };
+
+document.getElementById("mybtn").addEventListener("click", function(){
+    var spend = 5;
+    money -= spend;
+    document.getElementById("totaal").innerHTML = money
+    timeleft += 5000 
+});
+
+setInterval(money_and_time, 100);
